@@ -11,7 +11,8 @@ function passwordGenerator($number)
 
     return $password; */
 
-    $characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ<>§^$?!%&/@*-';
+    $characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ<>^$?!%&/@*-';
+
 
     $password = '';
 

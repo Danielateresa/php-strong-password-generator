@@ -40,6 +40,10 @@ if (isset($_GET['passwordLen'])) {
     .visible {
         display: block;
     }
+
+    .form-check {
+        width: fit-content;
+    }
     </style>
 
 </head>
@@ -54,14 +58,50 @@ if (isset($_GET['passwordLen'])) {
         </header>
         <!-- /.site_header -->
 
-        <main class="site_main p-5 my-5 bg-light">
+        <main class="site_main p-5 my-5 bg-light rounded">
 
             <form action="index.php" method="get">
 
                 <div class="input_box d-flex justify-content-between me-5">
-                    <label for="passwordLen">Lunghezza password</label>
-                    <input type="number" name="passwordLen" id="passwordLen">
+                    <div class="labels text-start text-secondary">
+                        <h5 class="mb-5" for="passwordLen">Lunghezza password:</h5>
+                        <h5 for="form-check">Consenti ripetizioni di più caratteri:</h5>
+                    </div>
+                    <div class="input_group">
+                        <input class="mb-5" type="number" name="passwordLen" id="passwordLen">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="si id=" si" checked>
+                            <label class="form-check-label" for="si">
+                                Sì
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="no" id="no">
+                            <label class="form-check-label" for="no">
+                                No
+                            </label>
+                        </div>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="lettere" id="lettere">
+                            <label class="form-check-label" for="lettere">
+                                Lettere
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="numeri" id="numeri">
+                            <label class="form-check-label" for="numeri">
+                                Numeri
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="simboli" id="simboli">
+                            <label class="form-check-label" for="simboli">
+                                Simboli
+                            </label>
+                        </div>
+                    </div>
                 </div>
+
 
                 <div class="button_box text-start my-5">
                     <button type="submit" class="btn btn-primary">Invia</button>
@@ -69,7 +109,7 @@ if (isset($_GET['passwordLen'])) {
                 </div>
             </form>
 
-            <div class="result_box bg-white p-4 text-secondary <?php echo $classVisible ?>">
+            <div class="result_box bg-white p-4 text-secondary rounded <?php echo $classVisible ?>">
 
                 <h4><?php echo 'La tua password è: ' . $finalPassword ?></h4>
 
