@@ -23,7 +23,7 @@ if (isset($_GET['passwordLen'])) {
 
         return $password; */
 
-        $characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ?!%&/@*-';
+        $characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ<>§^$?!%&/@*-';
 
         $password = '';
 
@@ -36,7 +36,7 @@ if (isset($_GET['passwordLen'])) {
     }
 
     $finalPassword = passwordGenerator($_GET['passwordLen']);
-    var_dump($finalPassword);
+    //var_dump($finalPassword);
     echo $finalPassword;
 };
 ?>
