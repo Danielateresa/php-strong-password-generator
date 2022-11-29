@@ -10,17 +10,28 @@ Verificato il corretto funzionamento del nostro codice, spostiamo la logica in u
 
 
 if (isset($_GET['passwordLen'])) {
-    var_dump($_GET['passwordLen']);
+    //var_dump($_GET['passwordLen']);
 
 
     function passwordGenerator($number)
     {
-        //random number
-        $randomNum = random_bytes($number);
+        /* //random characters
+        $randomChar = random_bytes($number);
 
-        //pusho nell'array
-        $password = bin2hex($randomNum);
 
+        $password = bin2hex($randomChar);
+
+        return $password; */
+
+        $characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ?!%&/@*-';
+
+        $password = '';
+
+        for ($i = 0; $i < $number; $i++) {
+            $randomCharacter = $characters[rand(0, strlen($characters)-1)]; //carattere in posizione randomica
+
+            $password.= $randomCharacter;
+        }
         return $password;
     }
 
