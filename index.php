@@ -37,7 +37,7 @@ if (isset($_GET['passwordLen'])) {
 
     $finalPassword = passwordGenerator($_GET['passwordLen']);
     //var_dump($finalPassword);
-    echo $finalPassword;
+    //echo $finalPassword;
 };
 ?>
 
@@ -80,6 +80,12 @@ if (isset($_GET['passwordLen'])) {
                     <button type="reset" class="btn btn-secondary">Annulla</button>
                 </div>
             </form>
+
+            <div class="result_box bg-white p-4 text-secondary">
+                <h3>La tua password è:</h3>
+                <h4><?php echo $finalPassword ?></h4>
+
+            </div>
 
         </main>
         <!-- /.site_main -->
