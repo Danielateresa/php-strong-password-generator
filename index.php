@@ -8,6 +8,26 @@ Creare un form che invii in GET la lunghezza della password. Una nostra funzione
 Milestone 2
 Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale */
 
+
+if (isset($_GET['passwordLen'])) {
+    var_dump($_GET['passwordLen']);
+
+
+    function passwordGenerator($number)
+    {
+        //random number
+        $randomNum = random_bytes($number);
+
+        //pusho nell'array
+        $password = $randomNum;
+
+        return $password;
+    }
+
+    $finalPassword = passwordGenerator($_GET['passwordLen']);
+    var_dump($finalPassword);
+    echo $finalPassword;
+};
 ?>
 
 <!doctype html>
