@@ -12,7 +12,7 @@ include __DIR__ . '/functions.php';
 
 if (isset($_GET['passwordLen'])) {
     //var_dump($_GET['passwordLen']);
-
+    $classVisible = 'visible';
     $finalPassword = passwordGenerator($_GET['passwordLen']);
     //var_dump($finalPassword);
     //echo $finalPassword;
@@ -31,6 +31,16 @@ if (isset($_GET['passwordLen'])) {
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <style>
+    .result_box {
+        display: none;
+    }
+
+    .visible {
+        display: block;
+    }
+    </style>
 
 </head>
 
@@ -53,15 +63,15 @@ if (isset($_GET['passwordLen'])) {
                     <input type="number" name="passwordLen" id="passwordLen">
                 </div>
 
-                <div class="button_box text-start mt-5">
+                <div class="button_box text-start my-5">
                     <button type="submit" class="btn btn-primary">Invia</button>
                     <button type="reset" class="btn btn-secondary">Annulla</button>
                 </div>
             </form>
 
-            <div class="result_box bg-white p-4 text-secondary">
-                <h3>La tua password è:</h3>
-                <h4><?php echo $finalPassword ?></h4>
+            <div class="result_box bg-white p-4 text-secondary <?php echo $classVisible ?>">
+
+                <h4><?php echo 'La tua password è: ' . $finalPassword ?></h4>
 
             </div>
 
