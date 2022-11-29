@@ -25,7 +25,34 @@ Verificato il corretto funzionamento del nostro codice, spostiamo la logica in u
 
 </head>
 
-<body>
+<body class="bg-info">
+
+    <div class="container text-center py-5">
+        <header class="site_header">
+
+            <h1 class="text-white">Strong Password Generator</h1>
+            <h2 class="text-secondary">Genera una password sicura</h2>
+        </header>
+        <!-- /.site_header -->
+
+        <main class="site_main p-5 my-5 bg-light">
+
+            <form action="index.php" method="get">
+
+                <div class="input_box d-flex justify-content-between me-5">
+                    <label for="passwordLen">Lunghezza password</label>
+                    <input type="number" name="passwordLen" id="passwordLen">
+                </div>
+
+                <div class="button_box text-start mt-5">
+                    <button type="submit" class="btn btn-primary">Invia</button>
+                    <button type="reset" class="btn btn-secondary">Annulla</button>
+                </div>
+            </form>
+
+        </main>
+        <!-- /.site_main -->
+    </div>
 
 
 
