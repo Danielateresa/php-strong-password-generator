@@ -19,7 +19,7 @@ if (isset($_GET['passwordLen'])) {
         $randomNum = random_bytes($number);
 
         //pusho nell'array
-        $password = $randomNum;
+        $password = bin2hex($randomNum);
 
         return $password;
     }
